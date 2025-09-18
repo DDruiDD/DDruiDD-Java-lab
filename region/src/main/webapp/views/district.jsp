@@ -2,15 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ page import="domain.District"%>
-<%
-District d1 = new District(1l, "Александровка", "45", "1990", 10000);
-District d2 = new District(2l, "Аксайский район", "100", "1890", 25000);
-District d3= new District(3l, "Азовский район", "500", "1700", 500000);
-District d4 = new District(4l, "Ленинский район", "10", "1800", 150000);
-District[] districts = new District[]{d1, d2, d3, d4};
-int length = districts.length;
-pageContext.setAttribute("districts", districts);
-%>
 
 <!DOCTYPE html>
 <html>
@@ -69,22 +60,54 @@ pageContext.setAttribute("districts", districts);
  </table>
  </div>
  <div class="col-4 border px-4">
- <form method="POST" action="">
+ 
+ 
+ 
+ <form method="POST" action="district">
  <h3>Новый район</h3>
- <div class="mb-3">
- <br> 
- <label for="inputRole" class="col-sm-3 col-form-label">Район</label>
- <div class="col-sm-6">
- <input type="text" name="inputRole" class="form-control" id="personRole" />
- </div>
- </div>
- <p>
- <br> <br> <br>
-
- <button type="submit" class="btn btn-primary">Добавить</button>
  <br>
+ <div class="mb-3 row">
+ <label for="lastname"
+ class="col-sm-3 col-form-label">Название района</label>
+ <div class="col-sm-7">
+ <input type="text" class="form-control" id="nameDistrict" name="nameDistrict" />
+ </div>
+ </div>
+ 
+ <div class="mb-3 row">
+<label for="firstname" class="col-sm-3 col-form-label">Площадь</label>
+ <div class="col-sm-7">
+ <input type="text"
+ class="form-control" id="areaDistrict"
+ name="areaDistrict" />
+ </div>
+ </div>
+
+ <div class="mb-3 row">
+ <label for="phone" class="col-sm-3 col-form-label">Год зайстройки</label>
+ <div class="col-sm-7">
+ <input type="text"
+ class="form-control" id="yearDistrict"
+ name="yearDistrict" />
+ </div>
+ </div>
+ 
+ <div class="mb-3 row">
+ <label for="people"
+ class="col-sm-3 col-form-label">Население</label>
+ <div class="col-sm-7">
+ <input type="number" class="form-control" id="peopleDistrict" name="peopleDistrict" />
+ </div>
+ </div>
+ <p> <br>
+ <button type="submit"
+ class="btn btn-primary">Добавить</button>
  </p>
  </form>
+ 
+ 
+ 
+
  </div>
  </div>
  </div>
