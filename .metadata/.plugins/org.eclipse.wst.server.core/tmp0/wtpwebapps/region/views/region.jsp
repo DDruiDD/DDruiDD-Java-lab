@@ -73,15 +73,16 @@ n.js"></script>
  <label for="lastname"
  class="col-sm-3 col-form-label">Название</label>
  <div class="col-sm-7">
- <input type="text" class="form-control" id="nameRegion"name="nameRegion" />
+ <input type="text" class="form-control"
+ id="staticLastname"name="lastname" />
  </div>
  </div>
  <div class="mb-3 row">
 <label for="firstname" class="col-sm-3 col-form-label">Площадь</label>
  <div class="col-sm-7">
  <input type="text"
- class="form-control" id="areaRegion"
- name="areaRegion" />
+ class="form-control" id="staticFirstname"
+ name="firstname" />
  </div>
  </div>
  <div class="mb-3 row">
@@ -102,8 +103,8 @@ n.js"></script>
  <label for="phone" class="col-sm-3 col-form-label">Административный центр</label>
  <div class="col-sm-7">
  <input type="text"
- class="form-control" id="cityRegion"
- name="cityRegion" />
+ class="form-control" id="staticphone"
+ name="phone" />
  </div>
  </div>
  <div class="mb-3 row">
@@ -111,7 +112,7 @@ n.js"></script>
  class="col-sm-3 col-form-label">Глава</label>
  <div class="col-sm-7">
  <input type="text" class="form-control"
- id="headRegion" name="headRegion" />
+ id="staticemail" name="email" />
  </div>
  </div>
  <p> <br>
