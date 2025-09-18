@@ -39,19 +39,24 @@
 	 <th scope="col">Удалить</th>
  </thead>
  <tbody>
- <c:forEach var="District" items="${districts}">
+ <c:forEach var="district" items="${districts}">
  <tr>
- <td>${District.getId()}</td>
- <td>${District.getNameDistrict()}</td>
- <td>${District.getDistrictArea()}</td>
- <td>${District.getDistrictYear()}</td>
- <td>${District.getDistrictNumberOfPeople()}</td>
- <td width="20"><a href="#" role="button"
+ <td>${district.getId()}</td>
+ <td>${district.getNameDistrict()}</td>
+ <td>${district.getDistrictArea()}</td>
+ <td>${district.getDistrictYear()}</td>
+ <td>${district.getDistrictNumberOfPeople()}</td>
+ 
+ <td width="20"><a href='<c:url value="/editdistrict?id=${district.getId()}"/>' role="button"
  class="btn btn-outline-primary">
  <img alt="Редактировать"
  src="images/icon-edit.png"></a></td>
- <td width="20"><a href="#" role="button"
- class="btn btn-outline-primary">
+ 
+ <td width="20"><a href="<c:url value="/deletedistrict?id=${district.getId()}" />" role="button"
+ class="btn btn-outline-primary"
+ onclick="return confirm('Удалить район с кодом:'+
+${district.getId()}+'?')"
+ >
  <img alt="Удалить"
  src="images/icon-delete.png"></a></td>
  </tr>
@@ -60,22 +65,54 @@
  </table>
  </div>
  <div class="col-4 border px-4">
- <form method="POST" action="">
+ 
+ 
+ 
+ <form method="POST" action="district">
  <h3>Новый район</h3>
- <div class="mb-3">
- <br> 
- <label for="inputRole" class="col-sm-3 col-form-label">Район</label>
- <div class="col-sm-6">
- <input type="text" name="inputRole" class="form-control" id="personRole" />
- </div>
- </div>
- <p>
- <br> <br> <br>
-
- <button type="submit" class="btn btn-primary">Добавить</button>
  <br>
+ <div class="mb-3 row">
+ <label for="lastname"
+ class="col-sm-3 col-form-label">Название района</label>
+ <div class="col-sm-7">
+ <input type="text" class="form-control" id="nameDistrict" name="nameDistrict" />
+ </div>
+ </div>
+ 
+ <div class="mb-3 row">
+<label for="firstname" class="col-sm-3 col-form-label">Площадь</label>
+ <div class="col-sm-7">
+ <input type="text"
+ class="form-control" id="areaDistrict"
+ name="areaDistrict" />
+ </div>
+ </div>
+
+ <div class="mb-3 row">
+ <label for="phone" class="col-sm-3 col-form-label">Год зайстройки</label>
+ <div class="col-sm-7">
+ <input type="text"
+ class="form-control" id="yearDistrict"
+ name="yearDistrict" />
+ </div>
+ </div>
+ 
+ <div class="mb-3 row">
+ <label for="people"
+ class="col-sm-3 col-form-label">Население</label>
+ <div class="col-sm-7">
+ <input type="number" class="form-control" id="peopleDistrict" name="peopleDistrict" />
+ </div>
+ </div>
+ <p> <br>
+ <button type="submit"
+ class="btn btn-primary">Добавить</button>
  </p>
  </form>
+ 
+ 
+ 
+
  </div>
  </div>
  </div>
